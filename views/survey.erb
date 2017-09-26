@@ -1,0 +1,16 @@
+<h1><%= @survey.name %></h1>
+
+<form action = '/survey/<%= @survey.id %>' method="post">
+  <label for = 'name'>Insert a Question</label>
+  <input type = 'text' name = 'name'>
+
+  <button type = 'btn btn-success' type = 'submit'>Submit</button>
+
+</form>
+
+<h1></h1>
+<ul>
+  <% @questions.each do |question| %>
+    <li><a href="/question/<%= question.id %>"><%= question.name %></a></li>
+  <% end %>
+</ul>
