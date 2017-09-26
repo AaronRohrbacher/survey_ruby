@@ -7,6 +7,18 @@
   <button type = 'btn btn-success' type = 'submit'>Submit</button>
 
 </form>
+<form action = '/survey/<%= @survey.id %>' method="post">
+  <input type = 'hidden' name = '_method' value = 'patch'>
+  <label for="name">Update the survey name!</label>
+  <input type="text" name="name">
+
+  <button type = 'btn btn-success' type = 'submit'>Update Survey</button>
+</form>
+
+<form action = '/survey/<%= @survey.id %>' method="post">
+  <input type = 'hidden' name = '_method' value = 'delete'>
+  <button type = 'btn btn-success' type = 'submit'>Delete Survey</button>
+</form>
 
 <h1></h1>
 <ul>

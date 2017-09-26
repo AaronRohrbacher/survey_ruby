@@ -1,0 +1,29 @@
+<h1><%= @question.name %></h1>
+
+<form action = '/question/<%= @question.id %>' method="post">
+  <input type = 'hidden' name = '_method' value = 'patch'>
+  <label for="name">Update the question name!</label>
+  <input type="text" name="name">
+
+  <button type = 'btn btn-success' type = 'submit'>Update Question</button>
+</form>
+
+<form action = '/question/<%= @question.id %>' method="post">
+  <input type = 'hidden' name = '_method' value = 'delete'>
+  <button type = 'btn btn-success' type = 'submit'>Delete Question</button>
+</form>
+
+<h1>Create possible answers:</h1>
+
+<form action = '/question/<%= @question.id %>' method = 'post'>
+  <label for="name">Create an answer:</label>
+  <input type="text" name="name">
+
+  <button type = 'submit' class = 'btn btn-success'>Create!</button>
+</form>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li><a href = "/answer/<%= answer.id %>"><%= answer.name %></a></li>
+  <% end %>
+</ul>
